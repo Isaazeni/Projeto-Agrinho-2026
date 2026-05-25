@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGRO FORTE | Futuro Sustentável 2026</title>
+  <style>
+    :root {
+      --verde: #2e7d32;
+      --verde-claro: #4caf50;
+      --terra: #8d6e63;
+      --amarelo: #ffeb3b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(180deg, #e8f5e9 0%, #c8e6c9 100%);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--verde);
+      color: white;
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1920') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      margin-top: 70px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--verde-claro);
+      color: white;
+      padding: 15px 40px;
+      border-radius: 50px;
+      font-size: 1.3rem;
+      text-decoration: none;
+      transition: all 0.3s;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #1b5e20;
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 50px;
+      color: var(--verde);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-15px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 25px;
+    }
+
+    .card h3 {
+      color: var(--verde);
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background: var(--verde);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .anim {
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">🌱 AGRO FORTE</div>
+      <div>
+        <a href="#sobre" style="color:white; margin:0 15px; text-decoration:none;">Sobre</a>
+        <a href="#praticas" style="color:white; margin:0 15px; text-decoration:none;">Práticas</a>
+        <a href="#meioambiente" style="color:white; margin:0 15px; text-decoration:none;">Meio Ambiente</a>
+        <a href="#futuro" style="color:white; margin:0 15px; text-decoration:none;">Futuro 2026</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content anim">
+      <h1>AGRO FORTE</h1>
+      <p>Um futuro sustentável começa com a força da nossa terra</p>
+      <a href="#sobre" class="btn">Conheça o Projeto Agrinho 2026</a>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <h2>Sobre o Agro Forte</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1592982537447-6f2a6a0c8c0e?w=600" alt="Agricultura">
+        <div class="card-content">
+          <h3>🌾 Agricultura Responsável</h3>
+          <p>Produzir mais com menos impacto ambiental, respeitando o solo e a biodiversidade.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1542601906990-b4d3e9c7f4e3?w=600" alt="Sustentabilidade">
+        <div class="card-content">
+          <h3>♻️ Sustentabilidade</h3>
+          <p>Práticas que garantem que as próximas gerações tenham os mesmos recursos que temos hoje.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600" alt="Meio Ambiente">
+        <div class="card-content">
+          <h3>🌍 Preservação Ambiental</h3>
+          <p>Cuidar das matas, rios e animais enquanto produzimos alimentos de qualidade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="praticas" style="background: #f1f8e9;">
+    <h2>Práticas Sustentáveis</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-content">
+          <h3>🚜 Plantio Direto</h3>
+          <p>Protege o solo da erosão e aumenta a matéria orgânica.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3>💧 Irrigação Inteligente</h3>
+          <p>Economia de água com tecnologia e sensores.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3>🐝 Polinização e Biodiversidade</h3>
+          <p>Preservação de abelhas e outros polinizadores.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="futuro">
+    <h2>O Futuro é Sustentável</h2>
+    <p style="text-align:center; font-size:1.4rem; max-width:800px; margin:0 auto 50px;">
+      Em 2026, o Agro Forte representa a união entre tecnologia, respeito à natureza e produção de alimentos de qualidade.
+    </p>
+    <div style="text-align:center;">
+      <button class="btn" onclick="mostrarMensagem()">🌱 Ver Mensagem do Futuro</button>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Agrinho 2026</strong> - Agro Forte: Futuro Sustentável e Meio Ambiente</p>
+    <p>Feito com ❤️ para um Brasil mais verde</p>
+  </footer>
+
+  <script>
+    function mostrarMensagem() {
+      const mensagens = [
+        "O futuro da agricultura é sustentável! 🌱",
+        "Juntos podemos produzir e preservar ao mesmo tempo! 🌍",
+        "Cada semente plantada hoje é um futuro colhido amanhã.",
+        "O Agro Forte é a força da nossa terra e do nosso povo!"
+      ];
+      
+      const random = mensagens[Math.floor(Math.random() * mensagens.length)];
+      
+      alert("🌾 " + random + "\n\nAgrinho 2026");
+    }
+
+    // Animação suave ao rolar a página
+    window.addEventListener('scroll', () => {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        if (cardTop < window.innerHeight - 100) {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
