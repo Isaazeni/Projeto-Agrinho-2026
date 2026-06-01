@@ -74,7 +74,7 @@ O ecossistema do projeto está mapeado de forma lógica e organizada:
     └── hq.html
     ▶️ Como Executar o Projeto
 Para visualizar o projeto localmente:
-
+🚀 Como Visualizar o Projeto
 Baixe ou clone este repositório;
 Abra a pasta do projeto em seu computador;
 Abra o arquivo index.html em um navegador de internet;
