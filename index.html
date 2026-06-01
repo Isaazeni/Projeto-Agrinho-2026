@@ -1,277 +1,335 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AGRO FORTE | Futuro Sustentável 2026</title>
-  <style>
-    :root {
-      --verde: #2e7d32;
-      --verde-claro: #4caf50;
-      --terra: #8d6e63;
-      --amarelo: #ffeb3b;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(180deg, #e8f5e9 0%, #c8e6c9 100%);
-      color: #333;
-      line-height: 1.6;
-    }
-
-    header {
-      background: var(--verde);
-      color: white;
-      padding: 1rem 0;
-      position: fixed;
-      width: 100%;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
-    }
-
-    .logo {
-      font-size: 2rem;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .hero {
-      height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1920') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      margin-top: 70px;
-    }
-
-    .hero-content {
-      max-width: 800px;
-      padding: 0 20px;
-    }
-
-    .hero h1 {
-      font-size: 4rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-
-    .hero p {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .btn {
-      display: inline-block;
-      background: var(--verde-claro);
-      color: white;
-      padding: 15px 40px;
-      border-radius: 50px;
-      font-size: 1.3rem;
-      text-decoration: none;
-      transition: all 0.3s;
-      font-weight: bold;
-    }
-
-    .btn:hover {
-      background: #1b5e20;
-      transform: scale(1.05);
-    }
-
-    section {
-      padding: 80px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    h2 {
-      font-size: 2.8rem;
-      text-align: center;
-      margin-bottom: 50px;
-      color: var(--verde);
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      transition: transform 0.4s;
-    }
-
-    .card:hover {
-      transform: translateY(-15px);
-    }
-
-    .card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 25px;
-    }
-
-    .card h3 {
-      color: var(--verde);
-      margin-bottom: 15px;
-    }
-
-    footer {
-      background: var(--verde);
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .anim {
-      animation: fadeIn 1.5s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AgroVerde — Agricultura Sustentável</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header>
-    <nav>
-      <div class="logo">🌱 AGRO FORTE</div>
-      <div>
-        <a href="#sobre" style="color:white; margin:0 15px; text-decoration:none;">Sobre</a>
-        <a href="#praticas" style="color:white; margin:0 15px; text-decoration:none;">Práticas</a>
-        <a href="#meioambiente" style="color:white; margin:0 15px; text-decoration:none;">Meio Ambiente</a>
-        <a href="#futuro" style="color:white; margin:0 15px; text-decoration:none;">Futuro 2026</a>
-      </div>
-    </nav>
-  </header>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <span class="logo">🌿 AgroVerde</span>
+      <ul class="nav-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#pilares">Pilares</a></li>
+        <li><a href="#praticas">Práticas</a></li>
+        <li><a href="#dados">Dados</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
 
+  <!-- HERO -->
   <section class="hero">
-    <div class="hero-content anim">
-      <h1>AGRO FORTE</h1>
-      <p>Um futuro sustentável começa com a força da nossa terra</p>
-      <a href="#sobre" class="btn">Conheça o Projeto Agrinho 2026</a>
-    </div>
-  </section>
-
-  <section id="sobre">
-    <h2>Sobre o Agro Forte</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1592982537447-6f2a6a0c8c0e?w=600" alt="Agricultura">
-        <div class="card-content">
-          <h3>🌾 Agricultura Responsável</h3>
-          <p>Produzir mais com menos impacto ambiental, respeitando o solo e a biodiversidade.</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1542601906990-b4d3e9c7f4e3?w=600" alt="Sustentabilidade">
-        <div class="card-content">
-          <h3>♻️ Sustentabilidade</h3>
-          <p>Práticas que garantem que as próximas gerações tenham os mesmos recursos que temos hoje.</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600" alt="Meio Ambiente">
-        <div class="card-content">
-          <h3>🌍 Preservação Ambiental</h3>
-          <p>Cuidar das matas, rios e animais enquanto produzimos alimentos de qualidade.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="praticas" style="background: #f1f8e9;">
-    <h2>Práticas Sustentáveis</h2>
-    <div class="cards">
-      <div class="card">
-        <div class="card-content">
-          <h3>🚜 Plantio Direto</h3>
-          <p>Protege o solo da erosão e aumenta a matéria orgânica.</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-content">
-          <h3>💧 Irrigação Inteligente</h3>
-          <p>Economia de água com tecnologia e sensores.</p>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-content">
-          <h3>🐝 Polinização e Biodiversidade</h3>
-          <p>Preservação de abelhas e outros polinizadores.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="futuro">
-    <h2>O Futuro é Sustentável</h2>
-    <p style="text-align:center; font-size:1.4rem; max-width:800px; margin:0 auto 50px;">
-      Em 2026, o Agro Forte representa a união entre tecnologia, respeito à natureza e produção de alimentos de qualidade.
+    <p class="hero-tag">Agricultura Sustentável</p>
+    <h1>O Campo que Alimenta<br/>e Preserva</h1>
+    <p class="hero-sub">
+      O equilíbrio entre produtividade agrícola e preservação ambiental
+      não é uma utopia — é o único caminho para o futuro.
     </p>
-    <div style="text-align:center;">
-      <button class="btn" onclick="mostrarMensagem()">🌱 Ver Mensagem do Futuro</button>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">33%</span>
+        <span class="stat-label">das emissões globais vêm da agricultura</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">70%</span>
+        <span class="stat-label">da água doce usada em irrigação</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">10 bi</span>
+        <span class="stat-label">de pessoas a alimentar até 2050</span>
+      </div>
+    </div>
+    <a href="#sobre" class="btn">Saiba Mais ↓</a>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="section" id="sobre">
+    <div class="container">
+      <span class="tag">Nossa Missão</span>
+      <h2>Produzir Mais, Degradar Menos</h2>
+      <p>
+        A agricultura sustentável busca satisfazer as necessidades alimentares da humanidade
+        sem comprometer a capacidade das gerações futuras de fazer o mesmo. É a convergência
+        entre ciência, tradição e respeito pela natureza.
+      </p>
+      <p>
+        O Brasil possui um papel único nessa equação: maior produtor agrícola tropical do mundo,
+        detentor de <strong>12% da água doce superficial</strong> e responsável por
+        <strong>60% da Amazônia</strong> — o maior bioma florestal do planeta.
+      </p>
+      <blockquote>
+        "Sustentabilidade no agro significa produzir hoje sem destruir o amanhã."
+      </blockquote>
     </div>
   </section>
 
-  <footer>
-    <p><strong>Agrinho 2026</strong> - Agro Forte: Futuro Sustentável e Meio Ambiente</p>
-    <p>Feito com ❤️ para um Brasil mais verde</p>
+  <!-- PILARES -->
+  <section class="section bg-green" id="pilares">
+    <div class="container">
+      <span class="tag">Fundamentos</span>
+      <h2>Os 6 Pilares do Agro Sustentável</h2>
+      <div class="grid">
+
+        <div class="card">
+          <span class="card-icon">🌱</span>
+          <h3>Solo Vivo</h3>
+          <p>O solo saudável é a base de tudo. Práticas como rotação de culturas, compostagem e plantio direto mantêm a biota e a fertilidade natural.</p>
+          <ul>
+            <li>Plantio direto na palha</li>
+            <li>Compostagem orgânica</li>
+            <li>Rotação de culturas</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <span class="card-icon">💧</span>
+          <h3>Gestão da Água</h3>
+          <p>Irrigação inteligente e reaproveitamento de água reduzem desperdícios. Gotejamento e sensores de umidade aumentam a eficiência em até 50%.</p>
+          <ul>
+            <li>Irrigação por gotejamento</li>
+            <li>Captação de água da chuva</li>
+            <li>Sensores de umidade</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <span class="card-icon">🦋</span>
+          <h3>Biodiversidade</h3>
+          <p>Preservar fauna e flora nativa garante polinização, controle de pragas e regulação climática, reduzindo a dependência de agroquímicos.</p>
+          <ul>
+            <li>Corredores ecológicos</li>
+            <li>Controle biológico de pragas</li>
+            <li>Matas ciliares preservadas</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <span class="card-icon">📡</span>
+          <h3>Agricultura de Precisão</h3>
+          <p>Drones, satélites, IoT e inteligência artificial monitoram lavouras em tempo real, aplicando insumos no lugar certo, na hora certa.</p>
+          <ul>
+            <li>Drones e sensoriamento remoto</li>
+            <li>IA e Big Data agrícola</li>
+            <li>IoT no campo</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <span class="card-icon">☀️</span>
+          <h3>Energia Renovável</h3>
+          <p>Biomassa, biogás, solar e eólico transformam propriedades rurais em geradoras de energia limpa, reduzindo custos e emissões.</p>
+          <ul>
+            <li>Energia solar fotovoltaica</li>
+            <li>Biogás de resíduos animais</li>
+            <li>Biomassa agrícola</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <span class="card-icon">🌍</span>
+          <h3>Sequestro de Carbono</h3>
+          <p>Sistemas agroflorestais e o plantio direto sequestram CO₂ atmosférico no solo, compensando emissões e gerando créditos de carbono.</p>
+          <ul>
+            <li>Integração lavoura-floresta</li>
+            <li>Mercado de créditos de carbono</li>
+            <li>Agrofloresta tropical</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRÁTICAS -->
+  <section class="section" id="praticas">
+    <div class="container">
+      <span class="tag">Na Prática</span>
+      <h2>Técnicas que Transformam o Campo</h2>
+
+      <div class="pratica">
+        <div class="pratica-num">01</div>
+        <div class="pratica-body">
+          <h3>Plantio Direto na Palha</h3>
+          <p>Semear sem revolver o solo mantém sua estrutura, preserva a matéria orgânica e reduz a erosão em até 90%. Adotado em mais de <strong>32 milhões de hectares</strong> no Brasil, é uma das maiores revoluções agrícolas do século XX.</p>
+          <div class="tags"><span>Solo</span><span>Erosão</span><span>Carbono</span></div>
+        </div>
+      </div>
+
+      <div class="pratica">
+        <div class="pratica-num">02</div>
+        <div class="pratica-body">
+          <h3>Sistemas Agroflorestais</h3>
+          <p>A integração de árvores, culturas e animais no mesmo espaço imita a estrutura de uma floresta. Aumenta a produtividade, a biodiversidade e o sequestro de carbono simultaneamente, podendo sequestrar até <strong>10 toneladas de CO₂/ha/ano</strong>.</p>
+          <div class="tags"><span>Floresta</span><span>Carbono</span><span>Biodiversidade</span></div>
+        </div>
+      </div>
+
+      <div class="pratica">
+        <div class="pratica-num">03</div>
+        <div class="pratica-body">
+          <h3>Integração Lavoura-Pecuária-Floresta (ILPF)</h3>
+          <p>Integra agricultura, pecuária e floresta no mesmo espaço. Reduz a pressão sobre novas áreas, aumenta a eficiência e cria ciclos de nutrientes naturais — gerando renda diversificada e contínua ao produtor rural.</p>
+          <div class="tags"><span>ILPF</span><span>Pecuária</span><span>Integração</span></div>
+        </div>
+      </div>
+
+      <div class="pratica">
+        <div class="pratica-num">04</div>
+        <div class="pratica-body">
+          <h3>Irrigação de Precisão</h3>
+          <p>Sensores no solo e algoritmos de IA determinam exatamente quando, onde e quanto irrigar. Reduz o consumo de água em até <strong>50%</strong> em comparação à irrigação tradicional por aspersão.</p>
+          <div class="tags"><span>Água</span><span>IoT</span><span>IA</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DADOS -->
+  <section class="section bg-dark" id="dados">
+    <div class="container">
+      <span class="tag light">Números que Importam</span>
+      <h2 class="light">O Agro Brasileiro em Dados</h2>
+      <div class="dados-grid">
+        <div class="dado">
+          <span class="dado-num">27,4%</span>
+          <span class="dado-desc">do PIB brasileiro vem do agronegócio (2023)</span>
+        </div>
+        <div class="dado">
+          <span class="dado-num">66%</span>
+          <span class="dado-desc">das propriedades rurais preservam vegetação nativa</span>
+        </div>
+        <div class="dado">
+          <span class="dado-num">3×</span>
+          <span class="dado-desc">mais produtividade em 30 anos sem ampliar a área plantada</span>
+        </div>
+        <div class="dado">
+          <span class="dado-num">32 mi ha</span>
+          <span class="dado-desc">de área em plantio direto no Brasil</span>
+        </div>
+        <div class="dado">
+          <span class="dado-num">12%</span>
+          <span class="dado-desc">da água doce superficial do mundo está no Brasil</span>
+        </div>
+        <div class="dado">
+          <span class="dado-num">R$ 2,4 tri</span>
+          <span class="dado-desc">é o valor das exportações do agronegócio brasileiro em 2023</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="section" id="jornada">
+    <div class="container">
+      <span class="tag">Jornada</span>
+      <h2>Marcos Históricos</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <span class="tl-ano">1975</span>
+          <div class="tl-conteudo">
+            <h4>Plantio Direto no Brasil</h4>
+            <p>Pesquisadores paranaenses introduzem o plantio direto, protegendo o solo da erosão e iniciando uma revolução silenciosa no campo.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-ano">1992</span>
+          <div class="tl-conteudo">
+            <h4>Rio 92 e Agenda 21</h4>
+            <p>A Conferência da ONU no Rio de Janeiro insere a sustentabilidade no centro da política global e agrícola.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-ano">2012</span>
+          <div class="tl-conteudo">
+            <h4>Novo Código Florestal</h4>
+            <p>O Brasil reformula as regras de Reserva Legal e APP, fortalecendo a proteção ambiental nas propriedades rurais.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-ano">2015</span>
+          <div class="tl-conteudo">
+            <h4>ODS da ONU</h4>
+            <p>Os 17 Objetivos de Desenvolvimento Sustentável são lançados. O ODS 2 (Fome Zero) e ODS 15 (Vida Terrestre) impactam diretamente o agro.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <span class="tl-ano">2023+</span>
+          <div class="tl-conteudo">
+            <h4>Mercado de Carbono Agrícola</h4>
+            <p>Produtores rurais monetizam práticas sustentáveis via créditos de carbono, consolidando o agro verde como negócio rentável.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="section bg-green" id="contato">
+    <div class="container contato-center">
+      <span class="tag">Faça Parte</span>
+      <h2>O Futuro do Campo Começa Agora</h2>
+      <p>Cada escolha no campo impacta o planeta. Seja produtor, consumidor ou pesquisador — sua participação é essencial.</p>
+      <form class="form" id="form">
+        <div class="form-row">
+          <input type="text"  placeholder="Seu nome"   required />
+          <input type="email" placeholder="Seu e-mail" required />
+        </div>
+        <select>
+          <option value="">Sou um(a)...</option>
+          <option>Produtor(a) Rural</option>
+          <option>Pesquisador(a)</option>
+          <option>Estudante</option>
+          <option>Consumidor(a) Consciente</option>
+          <option>Investidor(a)</option>
+        </select>
+        <textarea rows="4" placeholder="Conte seu interesse em agro sustentável..."></textarea>
+        <button type="submit" class="btn">Enviar Mensagem 🌱</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-logo">🌿 AgroVerde</p>
+      <p>Equilíbrio entre produção e meio ambiente.</p>
+      <p class="footer-refs">
+        Fontes: Embrapa · MAPA · CNA · FAO Brasil · IBGE
+      </p>
+      <p class="footer-copy">© 2025 AgroVerde · Projeto educacional sobre agricultura sustentável</p>
+    </div>
   </footer>
 
   <script>
-    function mostrarMensagem() {
-      const mensagens = [
-        "O futuro da agricultura é sustentável! 🌱",
-        "Juntos podemos produzir e preservar ao mesmo tempo! 🌍",
-        "Cada semente plantada hoje é um futuro colhido amanhã.",
-        "O Agro Forte é a força da nossa terra e do nosso povo!"
-      ];
-      
-      const random = mensagens[Math.floor(Math.random() * mensagens.length)];
-      
-      alert("🌾 " + random + "\n\nAgrinho 2026");
-    }
-
-    // Animação suave ao rolar a página
+    // Navbar scroll
     window.addEventListener('scroll', () => {
-      const cards = document.querySelectorAll('.card');
-      cards.forEach(card => {
-        const cardTop = card.getBoundingClientRect().top;
-        if (cardTop < window.innerHeight - 100) {
-          card.style.opacity = '1';
-          card.style.transform = 'translateY(0)';
-        }
+      document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Form feedback
+    document.getElementById('form').addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      btn.textContent = '✅ Enviado com sucesso!';
+      btn.disabled = true;
+      setTimeout(() => { btn.textContent = 'Enviar Mensagem 🌱'; btn.disabled = false; e.target.reset(); }, 3000);
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const el = document.querySelector(a.getAttribute('href'));
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
       });
     });
   </script>
+
 </body>
 </html>
