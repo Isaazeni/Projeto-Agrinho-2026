@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,330 +7,877 @@
   <title>AgroVerde — Agricultura Sustentável</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <span class="logo">🌿 AgroVerde</span>
-      <ul class="nav-links">
+  <!-- SKIP LINK -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- REGIÃO DE ANÚNCIOS PARA LEITORES DE TELA -->
+  <div id="anuncio" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+
+  <!-- =====================================================
+       PAINEL DE ACESSIBILIDADE
+  ====================================================== -->
+  <div
+    id="painel-acessibilidade"
+    class="painel-acess"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Painel de acessibilidade"
+    aria-hidden="true"
+  >
+    <div class="painel-header">
+      <h2>Acessibilidade</h2>
+      <button id="btn-fechar-painel" class="btn-fechar" aria-label="Fechar painel de acessibilidade">✕</button>
+    </div>
+
+    <div class="painel-grupo">
+      <p id="label-fonte"><strong>Tamanho da fonte</strong></p>
+      <div class="painel-linha" role="group" aria-labelledby="label-fonte">
+        <button id="btn-fonte-menor" aria-label="Diminuir tamanho da fonte">A−</button>
+        <button id="btn-fonte-reset" aria-label="Redefinir fonte para padrão">A</button>
+        <button id="btn-fonte-maior" aria-label="Aumentar tamanho da fonte">A+</button>
+      </div>
+    </div>
+
+    <div class="painel-grupo">
+      <p id="label-contraste"><strong>Contraste</strong></p>
+      <div class="painel-linha" role="group" aria-labelledby="label-contraste">
+        <button id="btn-contraste" aria-label="Alternar modo de alto contraste" aria-pressed="false">
+          ◑ Alto Contraste
+        </button>
+      </div>
+    </div>
+
+    <p class="painel-dica">Pressione <kbd>Esc</kbd> para fechar.</p>
+  </div>
+
+  <!-- OVERLAY -->
+  <div id="overlay-painel" class="overlay" aria-hidden="true"></div>
+
+  <!-- BOTÃO FLUTUANTE ACESSIBILIDADE -->
+  <button
+    id="btn-acess"
+    class="btn-acess-flutuante"
+    aria-label="Abrir painel de acessibilidade"
+    aria-expanded="false"
+    aria-controls="painel-acessibilidade"
+    title="Acessibilidade"
+  >♿</button>
+
+  <!-- =====================================================
+       HEADER / NAVBAR
+  ====================================================== -->
+  <header role="banner">
+    <nav class="navbar" aria-label="Navegação principal" id="navbar">
+      <div class="nav-container">
+
+        <a href="#conteudo-principal" class="logo" aria-label="AgroVerde — ir para início">
+          <span aria-hidden="true">🌿</span> AgroVerde
+        </a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="#sobre"    aria-label="Ir para Sobre">Sobre</a></li>
+          <li><a href="#pilares"  aria-label="Ir para Pilares">Pilares</a></li>
+          <li><a href="#praticas" aria-label="Ir para Práticas">Práticas</a></li>
+          <li><a href="#dados"    aria-label="Ir para Dados">Dados</a></li>
+          <li><a href="#jornada"  aria-label="Ir para Jornada">Jornada</a></li>
+          <li><a href="#quiz"     aria-label="Ir para o Quiz">Quiz</a></li>
+        </ul>
+
+        <button
+          id="hamburger"
+          class="hamburger"
+          aria-label="Abrir menu de navegação"
+          aria-expanded="false"
+          aria-controls="menu-mobile"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+
+      </div>
+    </nav>
+
+    <!-- MENU MOBILE -->
+    <nav id="menu-mobile" class="menu-mobile" aria-label="Menu mobile" aria-hidden="true">
+      <ul role="list">
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#pilares">Pilares</a></li>
         <li><a href="#praticas">Práticas</a></li>
         <li><a href="#dados">Dados</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li><a href="#jornada">Jornada</a></li>
+        <li><a href="#quiz">Quiz</a></li>
       </ul>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <p class="hero-tag">Agricultura Sustentável</p>
-    <h1>O Campo que Alimenta<br/>e Preserva</h1>
-    <p class="hero-sub">
-      O equilíbrio entre produtividade agrícola e preservação ambiental
-      não é uma utopia — é o único caminho para o futuro.
-    </p>
-    <div class="hero-stats">
-      <div class="stat">
-        <span class="stat-num">33%</span>
-        <span class="stat-label">das emissões globais vêm da agricultura</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">70%</span>
-        <span class="stat-label">da água doce usada em irrigação</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">10 bi</span>
-        <span class="stat-label">de pessoas a alimentar até 2050</span>
-      </div>
-    </div>
-    <a href="#sobre" class="btn">Saiba Mais ↓</a>
-  </section>
+  <!-- =====================================================
+       CONTEÚDO PRINCIPAL
+  ====================================================== -->
+  <main id="conteudo-principal" tabindex="-1">
 
-  <!-- SOBRE -->
-  <section class="section" id="sobre">
-    <div class="container">
-      <span class="tag">Nossa Missão</span>
-      <h2>Produzir Mais, Degradar Menos</h2>
-      <p>
-        A agricultura sustentável busca satisfazer as necessidades alimentares da humanidade
-        sem comprometer a capacidade das gerações futuras de fazer o mesmo. É a convergência
-        entre ciência, tradição e respeito pela natureza.
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-titulo">
+      <p class="hero-tag" aria-hidden="true">Agricultura Sustentável</p>
+      <h1 id="hero-titulo">O Campo que Alimenta e Preserva</h1>
+      <p class="hero-sub">
+        O equilíbrio entre produtividade agrícola e preservação ambiental
+        não é uma utopia — é o único caminho para o futuro.
       </p>
-      <p>
-        O Brasil possui um papel único nessa equação: maior produtor agrícola tropical do mundo,
-        detentor de <strong>12% da água doce superficial</strong> e responsável por
-        <strong>60% da Amazônia</strong> — o maior bioma florestal do planeta.
+
+      <div class="hero-stats" role="list" aria-label="Estatísticas sobre agricultura">
+        <div class="stat" role="listitem">
+          <span class="stat-num" aria-label="33 por cento">33%</span>
+          <span class="stat-label">das emissões globais vêm da agricultura</span>
+        </div>
+        <div class="stat" role="listitem">
+          <span class="stat-num" aria-label="70 por cento">70%</span>
+          <span class="stat-label">da água doce usada em irrigação</span>
+        </div>
+        <div class="stat" role="listitem">
+          <span class="stat-num" aria-label="10 bilhões">10 bi</span>
+          <span class="stat-label">de pessoas a alimentar até 2050</span>
+        </div>
+      </div>
+
+      <a href="#sobre" class="btn" aria-label="Saiba mais sobre agricultura sustentável">Saiba Mais ↓</a>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="section" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="container">
+        <span class="tag" aria-hidden="true">Nossa Missão</span>
+        <h2 id="sobre-titulo">Produzir Mais, Degradar Menos</h2>
+        <p>
+          A agricultura sustentável busca satisfazer as necessidades alimentares da humanidade
+          sem comprometer a capacidade das gerações futuras de fazer o mesmo. É a convergência
+          entre ciência, tradição e respeito pela natureza.
+        </p>
+        <p>
+          O Brasil possui um papel único nessa equação: maior produtor agrícola tropical do mundo,
+          detentor de <strong>12% da água doce superficial</strong> e responsável por
+          <strong>60% da Amazônia</strong> — o maior bioma florestal do planeta.
+        </p>
+        <blockquote cite="AgroVerde">
+          "Sustentabilidade no agro significa produzir hoje sem destruir o amanhã."
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- PILARES -->
+    <section class="section bg-green" id="pilares" aria-labelledby="pilares-titulo">
+      <div class="container">
+        <span class="tag" aria-hidden="true">Fundamentos</span>
+        <h2 id="pilares-titulo">Os 6 Pilares do Agro Sustentável</h2>
+
+        <div class="grid" role="list" aria-label="Lista dos 6 pilares da agricultura sustentável">
+
+          <article class="card" role="listitem" aria-labelledby="pilar-1">
+            <span class="card-icon" role="img" aria-label="Ícone de planta crescendo">🌱</span>
+            <h3 id="pilar-1">Solo Vivo</h3>
+            <p>O solo saudável é a base de tudo. Rotação de culturas, compostagem e plantio direto mantêm a biota e a fertilidade natural.</p>
+            <ul aria-label="Técnicas de Solo Vivo">
+              <li>Plantio direto na palha</li>
+              <li>Compostagem orgânica</li>
+              <li>Rotação de culturas</li>
+            </ul>
+          </article>
+
+          <article class="card" role="listitem" aria-labelledby="pilar-2">
+            <span class="card-icon" role="img" aria-label="Ícone de gota d'água">💧</span>
+            <h3 id="pilar-2">Gestão da Água</h3>
+            <p>Irrigação inteligente e reaproveitamento reduzem desperdícios. Gotejamento e sensores aumentam eficiência em até 50%.</p>
+            <ul aria-label="Técnicas de Gestão da Água">
+              <li>Irrigação por gotejamento</li>
+              <li>Captação de água da chuva</li>
+              <li>Sensores de umidade</li>
+            </ul>
+          </article>
+
+          <article class="card" role="listitem" aria-labelledby="pilar-3">
+            <span class="card-icon" role="img" aria-label="Ícone de borboleta representando biodiversidade">🦋</span>
+            <h3 id="pilar-3">Biodiversidade</h3>
+            <p>Preservar fauna e flora nativa garante polinização, controle de pragas e regulação climática, reduzindo agroquímicos.</p>
+            <ul aria-label="Técnicas de Biodiversidade">
+              <li>Corredores ecológicos</li>
+              <li>Controle biológico de pragas</li>
+              <li>Matas ciliares preservadas</li>
+            </ul>
+          </article>
+
+          <article class="card" role="listitem" aria-labelledby="pilar-4">
+            <span class="card-icon" role="img" aria-label="Ícone de antena de satélite">📡</span>
+            <h3 id="pilar-4">Agricultura de Precisão</h3>
+            <p>Drones, satélites, IoT e inteligência artificial monitoram lavouras em tempo real, aplicando insumos no lugar certo.</p>
+            <ul aria-label="Técnicas de Agricultura de Precisão">
+              <li>Drones e sensoriamento remoto</li>
+              <li>IA e Big Data agrícola</li>
+              <li>IoT no campo</li>
+            </ul>
+          </article>
+
+          <article class="card" role="listitem" aria-labelledby="pilar-5">
+            <span class="card-icon" role="img" aria-label="Ícone de sol representando energia renovável">☀️</span>
+            <h3 id="pilar-5">Energia Renovável</h3>
+            <p>Biomassa, biogás, solar e eólico transformam propriedades rurais em geradoras de energia limpa, reduzindo emissões.</p>
+            <ul aria-label="Técnicas de Energia Renovável">
+              <li>Energia solar fotovoltaica</li>
+              <li>Biogás de resíduos animais</li>
+              <li>Biomassa agrícola</li>
+            </ul>
+          </article>
+
+          <article class="card" role="listitem" aria-labelledby="pilar-6">
+            <span class="card-icon" role="img" aria-label="Ícone de globo terrestre representando sequestro de carbono">🌍</span>
+            <h3 id="pilar-6">Sequestro de Carbono</h3>
+            <p>Sistemas agroflorestais e plantio direto sequestram CO₂ atmosférico, compensando emissões e gerando créditos de carbono.</p>
+            <ul aria-label="Técnicas de Sequestro de Carbono">
+              <li>Integração lavoura-floresta</li>
+              <li>Mercado de créditos de carbono</li>
+              <li>Agrofloresta tropical</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PRÁTICAS -->
+    <section class="section" id="praticas" aria-labelledby="praticas-titulo">
+      <div class="container">
+        <span class="tag" aria-hidden="true">Na Prática</span>
+        <h2 id="praticas-titulo">Técnicas que Transformam o Campo</h2>
+
+        <ol class="praticas-lista" aria-label="Lista de práticas sustentáveis">
+
+          <li class="pratica">
+            <span class="pratica-num" aria-hidden="true">01</span>
+            <div class="pratica-body">
+              <h3>Plantio Direto na Palha</h3>
+              <p>Semear sem revolver o solo mantém sua estrutura, preserva a matéria orgânica e reduz a erosão em até 90%. Adotado em mais de <strong>32 milhões de hectares</strong> no Brasil, é uma das maiores revoluções agrícolas do século XX.</p>
+              <div class="tags" aria-label="Temas: Solo, Erosão, Carbono">
+                <span>Solo</span><span>Erosão</span><span>Carbono</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="pratica">
+            <span class="pratica-num" aria-hidden="true">02</span>
+            <div class="pratica-body">
+              <h3>Sistemas Agroflorestais</h3>
+              <p>A integração de árvores, culturas e animais no mesmo espaço imita uma floresta. Pode sequestrar até <strong>10 toneladas de CO₂/ha/ano</strong>, aumentando produtividade e biodiversidade simultaneamente.</p>
+              <div class="tags" aria-label="Temas: Floresta, Carbono, Biodiversidade">
+                <span>Floresta</span><span>Carbono</span><span>Biodiversidade</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="pratica">
+            <span class="pratica-num" aria-hidden="true">03</span>
+            <div class="pratica-body">
+              <h3>Integração Lavoura-Pecuária-Floresta (ILPF)</h3>
+              <p>Integra agricultura, pecuária e floresta no mesmo espaço. Reduz a pressão sobre novas áreas, cria ciclos de nutrientes naturais e gera renda diversificada e contínua ao produtor rural.</p>
+              <div class="tags" aria-label="Temas: ILPF, Pecuária, Integração">
+                <span>ILPF</span><span>Pecuária</span><span>Integração</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="pratica">
+            <span class="pratica-num" aria-hidden="true">04</span>
+            <div class="pratica-body">
+              <h3>Irrigação de Precisão</h3>
+              <p>Sensores no solo e algoritmos de IA determinam exatamente quando, onde e quanto irrigar. Reduz o consumo de água em até <strong>50%</strong> comparado à irrigação tradicional por aspersão.</p>
+              <div class="tags" aria-label="Temas: Água, IoT, IA">
+                <span>Água</span><span>IoT</span><span>IA</span>
+              </div>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- DADOS -->
+    <section class="section bg-dark" id="dados" aria-labelledby="dados-titulo">
+      <div class="container">
+        <span class="tag light" aria-hidden="true">Números que Importam</span>
+        <h2 id="dados-titulo" class="light">O Agro Brasileiro em Dados</h2>
+
+        <div class="dados-grid" role="list" aria-label="Dados estatísticos do agronegócio brasileiro">
+          <div class="dado" role="listitem">
+            <span class="dado-num" aria-label="27 vírgula 4 por cento">27,4%</span>
+            <span class="dado-desc">do PIB brasileiro vem do agronegócio (2023)</span>
+          </div>
+          <div class="dado" role="listitem">
+            <span class="dado-num" aria-label="66 por cento">66%</span>
+            <span class="dado-desc">das propriedades rurais preservam vegetação nativa</span>
+          </div>
+          <div class="dado" role="listitem">
+            <span class="dado-num" aria-label="3 vezes mais">3×</span>
+            <span class="dado-desc">mais produtividade em 30 anos sem ampliar a área plantada</span>
+          </div>
+          <div class="dado" role="listitem">
+            <span class="dado-num" aria-label="32 milhões de hectares">32 mi ha</span>
+            <span class="dado-desc">de área em plantio direto no Brasil</span>
+          </div>
+          <div class="dado" role="listitem">
+            <span class="dado-num" aria-label="12 por cento">12%</span>
+            <span class="dado-desc">da água doce superficial do mundo está no Brasil</span>
+          </div>
+          <div class="dado" role="listitem">
+            <span class="dado-num" aria-label="R$ 2 vírgula 4 trilhões">R$ 2,4 tri</span>
+            <span class="dado-desc">é o valor das exportações do agronegócio em 2023</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JORNADA / TIMELINE -->
+    <section class="section" id="jornada" aria-labelledby="jornada-titulo">
+      <div class="container">
+        <span class="tag" aria-hidden="true">Jornada</span>
+        <h2 id="jornada-titulo">Marcos Históricos</h2>
+
+        <ol class="timeline" aria-label="Linha do tempo da agricultura sustentável">
+          <li class="tl-item">
+            <span class="tl-ano">1975</span>
+            <div class="tl-conteudo">
+              <h3>Plantio Direto no Brasil</h3>
+              <p>Pesquisadores paranaenses introduzem o plantio direto, protegendo o solo da erosão e iniciando uma revolução silenciosa no campo.</p>
+            </div>
+          </li>
+          <li class="tl-item">
+            <span class="tl-ano">1992</span>
+            <div class="tl-conteudo">
+              <h3>Rio 92 e Agenda 21</h3>
+              <p>A Conferência da ONU no Rio de Janeiro insere a sustentabilidade no centro da política global e agrícola.</p>
+            </div>
+          </li>
+          <li class="tl-item">
+            <span class="tl-ano">2012</span>
+            <div class="tl-conteudo">
+              <h3>Novo Código Florestal</h3>
+              <p>O Brasil reformula as regras de Reserva Legal e APP, fortalecendo a proteção ambiental nas propriedades rurais.</p>
+            </div>
+          </li>
+          <li class="tl-item">
+            <span class="tl-ano">2015</span>
+            <div class="tl-conteudo">
+              <h3>ODS da ONU</h3>
+              <p>Os 17 Objetivos de Desenvolvimento Sustentável são lançados. O ODS 2 (Fome Zero) e ODS 15 (Vida Terrestre) impactam diretamente o agro.</p>
+            </div>
+          </li>
+          <li class="tl-item">
+            <span class="tl-ano">2023+</span>
+            <div class="tl-conteudo">
+              <h3>Mercado de Carbono Agrícola</h3>
+              <p>Produtores rurais monetizam práticas sustentáveis via créditos de carbono, consolidando o agro verde como negócio rentável.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         QUIZ INTERATIVO
+    ====================================================== -->
+    <section class="section bg-green" id="quiz" aria-labelledby="quiz-titulo">
+      <div class="container">
+        <span class="tag" aria-hidden="true">Teste seus Conhecimentos</span>
+        <h2 id="quiz-titulo">Quiz: Agro &amp; Sustentabilidade</h2>
+        <p>Responda as 8 perguntas abaixo e descubra o quanto você sabe sobre agricultura sustentável.</p>
+
+        <!-- BARRA DE PROGRESSO -->
+        <div class="quiz-progresso" aria-label="Progresso do quiz" role="status">
+          <div class="quiz-progresso-barra">
+            <div id="quiz-barra" class="quiz-barra-fill" style="width:0%" aria-hidden="true"></div>
+          </div>
+          <span id="quiz-progresso-texto" class="quiz-progresso-texto">Pergunta 1 de 8</span>
+        </div>
+
+        <!-- ÁREA DA PERGUNTA -->
+        <div
+          id="quiz-area"
+          class="quiz-area"
+          role="region"
+          aria-label="Área da pergunta atual"
+          aria-live="polite"
+        >
+
+          <!-- As perguntas são injetadas pelo JS aqui -->
+          <div id="quiz-pergunta-box" class="quiz-pergunta-box"></div>
+
+        </div>
+
+        <!-- RESULTADO FINAL (oculto até o fim) -->
+        <div
+          id="quiz-resultado"
+          class="quiz-resultado"
+          role="region"
+          aria-label="Resultado do quiz"
+          aria-live="assertive"
+          hidden
+        >
+          <div id="quiz-resultado-icone" class="resultado-icone" aria-hidden="true"></div>
+          <h3 id="quiz-resultado-titulo" class="resultado-titulo"></h3>
+          <p  id="quiz-resultado-msg"   class="resultado-msg"></p>
+          <div class="resultado-placar">
+            <span id="quiz-acertos" class="placar-num"></span>
+            <span class="placar-label">acertos de 8 perguntas</span>
+          </div>
+          <div class="resultado-detalhes" id="quiz-detalhes"></div>
+          <button id="btn-reiniciar" class="btn" aria-label="Reiniciar o quiz">
+            🔄 Tentar Novamente
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="footer" role="contentinfo" aria-label="Rodapé do site">
+    <div class="container">
+      <p class="footer-logo" aria-label="AgroVerde">
+        <span aria-hidden="true">🌿</span> AgroVerde
       </p>
-      <blockquote>
-        "Sustentabilidade no agro significa produzir hoje sem destruir o amanhã."
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- PILARES -->
-  <section class="section bg-green" id="pilares">
-    <div class="container">
-      <span class="tag">Fundamentos</span>
-      <h2>Os 6 Pilares do Agro Sustentável</h2>
-      <div class="grid">
-
-        <div class="card">
-          <span class="card-icon">🌱</span>
-          <h3>Solo Vivo</h3>
-          <p>O solo saudável é a base de tudo. Práticas como rotação de culturas, compostagem e plantio direto mantêm a biota e a fertilidade natural.</p>
-          <ul>
-            <li>Plantio direto na palha</li>
-            <li>Compostagem orgânica</li>
-            <li>Rotação de culturas</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <span class="card-icon">💧</span>
-          <h3>Gestão da Água</h3>
-          <p>Irrigação inteligente e reaproveitamento de água reduzem desperdícios. Gotejamento e sensores de umidade aumentam a eficiência em até 50%.</p>
-          <ul>
-            <li>Irrigação por gotejamento</li>
-            <li>Captação de água da chuva</li>
-            <li>Sensores de umidade</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <span class="card-icon">🦋</span>
-          <h3>Biodiversidade</h3>
-          <p>Preservar fauna e flora nativa garante polinização, controle de pragas e regulação climática, reduzindo a dependência de agroquímicos.</p>
-          <ul>
-            <li>Corredores ecológicos</li>
-            <li>Controle biológico de pragas</li>
-            <li>Matas ciliares preservadas</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <span class="card-icon">📡</span>
-          <h3>Agricultura de Precisão</h3>
-          <p>Drones, satélites, IoT e inteligência artificial monitoram lavouras em tempo real, aplicando insumos no lugar certo, na hora certa.</p>
-          <ul>
-            <li>Drones e sensoriamento remoto</li>
-            <li>IA e Big Data agrícola</li>
-            <li>IoT no campo</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <span class="card-icon">☀️</span>
-          <h3>Energia Renovável</h3>
-          <p>Biomassa, biogás, solar e eólico transformam propriedades rurais em geradoras de energia limpa, reduzindo custos e emissões.</p>
-          <ul>
-            <li>Energia solar fotovoltaica</li>
-            <li>Biogás de resíduos animais</li>
-            <li>Biomassa agrícola</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <span class="card-icon">🌍</span>
-          <h3>Sequestro de Carbono</h3>
-          <p>Sistemas agroflorestais e o plantio direto sequestram CO₂ atmosférico no solo, compensando emissões e gerando créditos de carbono.</p>
-          <ul>
-            <li>Integração lavoura-floresta</li>
-            <li>Mercado de créditos de carbono</li>
-            <li>Agrofloresta tropical</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PRÁTICAS -->
-  <section class="section" id="praticas">
-    <div class="container">
-      <span class="tag">Na Prática</span>
-      <h2>Técnicas que Transformam o Campo</h2>
-
-      <div class="pratica">
-        <div class="pratica-num">01</div>
-        <div class="pratica-body">
-          <h3>Plantio Direto na Palha</h3>
-          <p>Semear sem revolver o solo mantém sua estrutura, preserva a matéria orgânica e reduz a erosão em até 90%. Adotado em mais de <strong>32 milhões de hectares</strong> no Brasil, é uma das maiores revoluções agrícolas do século XX.</p>
-          <div class="tags"><span>Solo</span><span>Erosão</span><span>Carbono</span></div>
-        </div>
-      </div>
-
-      <div class="pratica">
-        <div class="pratica-num">02</div>
-        <div class="pratica-body">
-          <h3>Sistemas Agroflorestais</h3>
-          <p>A integração de árvores, culturas e animais no mesmo espaço imita a estrutura de uma floresta. Aumenta a produtividade, a biodiversidade e o sequestro de carbono simultaneamente, podendo sequestrar até <strong>10 toneladas de CO₂/ha/ano</strong>.</p>
-          <div class="tags"><span>Floresta</span><span>Carbono</span><span>Biodiversidade</span></div>
-        </div>
-      </div>
-
-      <div class="pratica">
-        <div class="pratica-num">03</div>
-        <div class="pratica-body">
-          <h3>Integração Lavoura-Pecuária-Floresta (ILPF)</h3>
-          <p>Integra agricultura, pecuária e floresta no mesmo espaço. Reduz a pressão sobre novas áreas, aumenta a eficiência e cria ciclos de nutrientes naturais — gerando renda diversificada e contínua ao produtor rural.</p>
-          <div class="tags"><span>ILPF</span><span>Pecuária</span><span>Integração</span></div>
-        </div>
-      </div>
-
-      <div class="pratica">
-        <div class="pratica-num">04</div>
-        <div class="pratica-body">
-          <h3>Irrigação de Precisão</h3>
-          <p>Sensores no solo e algoritmos de IA determinam exatamente quando, onde e quanto irrigar. Reduz o consumo de água em até <strong>50%</strong> em comparação à irrigação tradicional por aspersão.</p>
-          <div class="tags"><span>Água</span><span>IoT</span><span>IA</span></div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- DADOS -->
-  <section class="section bg-dark" id="dados">
-    <div class="container">
-      <span class="tag light">Números que Importam</span>
-      <h2 class="light">O Agro Brasileiro em Dados</h2>
-      <div class="dados-grid">
-        <div class="dado">
-          <span class="dado-num">27,4%</span>
-          <span class="dado-desc">do PIB brasileiro vem do agronegócio (2023)</span>
-        </div>
-        <div class="dado">
-          <span class="dado-num">66%</span>
-          <span class="dado-desc">das propriedades rurais preservam vegetação nativa</span>
-        </div>
-        <div class="dado">
-          <span class="dado-num">3×</span>
-          <span class="dado-desc">mais produtividade em 30 anos sem ampliar a área plantada</span>
-        </div>
-        <div class="dado">
-          <span class="dado-num">32 mi ha</span>
-          <span class="dado-desc">de área em plantio direto no Brasil</span>
-        </div>
-        <div class="dado">
-          <span class="dado-num">12%</span>
-          <span class="dado-desc">da água doce superficial do mundo está no Brasil</span>
-        </div>
-        <div class="dado">
-          <span class="dado-num">R$ 2,4 tri</span>
-          <span class="dado-desc">é o valor das exportações do agronegócio brasileiro em 2023</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TIMELINE -->
-  <section class="section" id="jornada">
-    <div class="container">
-      <span class="tag">Jornada</span>
-      <h2>Marcos Históricos</h2>
-      <div class="timeline">
-        <div class="tl-item">
-          <span class="tl-ano">1975</span>
-          <div class="tl-conteudo">
-            <h4>Plantio Direto no Brasil</h4>
-            <p>Pesquisadores paranaenses introduzem o plantio direto, protegendo o solo da erosão e iniciando uma revolução silenciosa no campo.</p>
-          </div>
-        </div>
-        <div class="tl-item">
-          <span class="tl-ano">1992</span>
-          <div class="tl-conteudo">
-            <h4>Rio 92 e Agenda 21</h4>
-            <p>A Conferência da ONU no Rio de Janeiro insere a sustentabilidade no centro da política global e agrícola.</p>
-          </div>
-        </div>
-        <div class="tl-item">
-          <span class="tl-ano">2012</span>
-          <div class="tl-conteudo">
-            <h4>Novo Código Florestal</h4>
-            <p>O Brasil reformula as regras de Reserva Legal e APP, fortalecendo a proteção ambiental nas propriedades rurais.</p>
-          </div>
-        </div>
-        <div class="tl-item">
-          <span class="tl-ano">2015</span>
-          <div class="tl-conteudo">
-            <h4>ODS da ONU</h4>
-            <p>Os 17 Objetivos de Desenvolvimento Sustentável são lançados. O ODS 2 (Fome Zero) e ODS 15 (Vida Terrestre) impactam diretamente o agro.</p>
-          </div>
-        </div>
-        <div class="tl-item">
-          <span class="tl-ano">2023+</span>
-          <div class="tl-conteudo">
-            <h4>Mercado de Carbono Agrícola</h4>
-            <p>Produtores rurais monetizam práticas sustentáveis via créditos de carbono, consolidando o agro verde como negócio rentável.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTATO -->
-  <section class="section bg-green" id="contato">
-    <div class="container contato-center">
-      <span class="tag">Faça Parte</span>
-      <h2>O Futuro do Campo Começa Agora</h2>
-      <p>Cada escolha no campo impacta o planeta. Seja produtor, consumidor ou pesquisador — sua participação é essencial.</p>
-      <form class="form" id="form">
-        <div class="form-row">
-          <input type="text"  placeholder="Seu nome"   required />
-          <input type="email" placeholder="Seu e-mail" required />
-        </div>
-        <select>
-          <option value="">Sou um(a)...</option>
-          <option>Produtor(a) Rural</option>
-          <option>Pesquisador(a)</option>
-          <option>Estudante</option>
-          <option>Consumidor(a) Consciente</option>
-          <option>Investidor(a)</option>
-        </select>
-        <textarea rows="4" placeholder="Conte seu interesse em agro sustentável..."></textarea>
-        <button type="submit" class="btn">Enviar Mensagem 🌱</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <p class="footer-logo">🌿 AgroVerde</p>
       <p>Equilíbrio entre produção e meio ambiente.</p>
-      <p class="footer-refs">
-        Fontes: Embrapa · MAPA · CNA · FAO Brasil · IBGE
-      </p>
+      <nav aria-label="Navegação de rodapé">
+        <ul class="footer-nav" role="list">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#pilares">Pilares</a></li>
+          <li><a href="#praticas">Práticas</a></li>
+          <li><a href="#dados">Dados</a></li>
+          <li><a href="#jornada">Jornada</a></li>
+          <li><a href="#quiz">Quiz</a></li>
+        </ul>
+      </nav>
+      <p class="footer-refs">Fontes: Embrapa · MAPA · CNA · FAO Brasil · IBGE</p>
       <p class="footer-copy">© 2025 AgroVerde · Projeto educacional sobre agricultura sustentável</p>
     </div>
   </footer>
 
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
   <script>
-    // Navbar scroll
+
+    /* ================================================================
+       1. BANCO DE PERGUNTAS DO QUIZ
+       Cada pergunta tem: texto, 4 opções (a–d), índice da correta (0-3),
+       e uma explicação exibida após responder.
+    ================================================================ */
+    const PERGUNTAS = [
+      {
+        texto: "Qual prática agrícola protege o solo da erosão sem revolvê-lo?",
+        opcoes: [
+          "Aração profunda",
+          "Plantio direto na palha",
+          "Queima de resíduos",
+          "Monocultura intensiva"
+        ],
+        correta: 1,
+        explicacao: "O plantio direto na palha semeia sem revolver o solo, mantendo sua estrutura e reduzindo a erosão em até 90%. É adotado em mais de 32 milhões de hectares no Brasil."
+      },
+      {
+        texto: "Qual percentual do PIB brasileiro é representado pelo agronegócio (2023)?",
+        opcoes: ["10,2%", "18,5%", "27,4%", "35,8%"],
+        correta: 2,
+        explicacao: "O agronegócio brasileiro representou cerca de 27,4% do PIB em 2023, consolidando o Brasil como uma das maiores potências agrícolas do mundo."
+      },
+      {
+        texto: "O que é o sistema ILPF?",
+        opcoes: [
+          "Irrigação de Lavouras com Pivô Fixo",
+          "Integração Lavoura-Pecuária-Floresta",
+          "Índice de Luminosidade de Plantações Florestais",
+          "Instituto de Levantamento de Pragas Florestais"
+        ],
+        correta: 1,
+        explicacao: "ILPF é a Integração Lavoura-Pecuária-Floresta, um sistema que combina os três componentes no mesmo espaço, aumentando a eficiência e criando ciclos naturais de nutrientes."
+      },
+      {
+        texto: "Quantos por cento da água doce superficial do mundo estão no Brasil?",
+        opcoes: ["4%", "8%", "12%", "20%"],
+        correta: 2,
+        explicacao: "O Brasil detém cerca de 12% da água doce superficial do planeta, o que torna a gestão hídrica na agricultura uma responsabilidade estratégica global."
+      },
+      {
+        texto: "Qual tecnologia permite reduzir o uso de água na irrigação em até 50%?",
+        opcoes: [
+          "Irrigação por inundação",
+          "Irrigação por aspersão convencional",
+          "Irrigação por gotejamento com sensores",
+          "Canalização de rios próximos"
+        ],
+        correta: 2,
+        explicacao: "A irrigação por gotejamento combinada com sensores de umidade do solo permite aplicar água exatamente onde e quando necessário, reduzindo o consumo em até 50%."
+      },
+      {
+        texto: "O que são 'créditos de carbono' no contexto agrícola?",
+        opcoes: [
+          "Financiamentos para compra de fertilizantes",
+          "Certificados gerados por práticas que sequestram ou evitam emissões de CO₂",
+          "Impostos cobrados de produtores que desmatam",
+          "Subsídios governamentais para energia solar"
+        ],
+        correta: 1,
+        explicacao: "Créditos de carbono são certificados gerados quando uma propriedade rural sequestra CO₂ (ex: agrofloresta) ou evita emissões. Podem ser vendidos no mercado, gerando renda extra ao produtor."
+      },
+      {
+        texto: "Qual foi o ano de início do uso do Plantio Direto no Brasil?",
+        opcoes: ["1960", "1975", "1988", "2001"],
+        correta: 1,
+        explicacao: "O plantio direto foi introduzido no Brasil em 1975 por pesquisadores do Paraná, representando uma revolução silenciosa que transformou a agricultura brasileira nas décadas seguintes."
+      },
+      {
+        texto: "Qual das alternativas NÃO é considerada um pilar da agricultura sustentável abordado neste site?",
+        opcoes: [
+          "Gestão da água",
+          "Uso intensivo de agrotóxicos",
+          "Energia renovável",
+          "Biodiversidade"
+        ],
+        correta: 1,
+        explicacao: "O uso intensivo de agrotóxicos é o oposto da agricultura sustentável. Os 6 pilares apresentados são: Solo Vivo, Gestão da Água, Biodiversidade, Agricultura de Precisão, Energia Renovável e Sequestro de Carbono."
+      }
+    ];
+
+    /* ================================================================
+       2. ESTADO DO QUIZ
+    ================================================================ */
+    let quizEstado = {
+      atual:     0,
+      acertos:   0,
+      respostas: [], // { correta: bool, escolhida: number }
+      finalizado: false
+    };
+
+    /* ================================================================
+       3. RENDERIZAR PERGUNTA
+    ================================================================ */
+    function renderizarPergunta() {
+      const box = document.getElementById('quiz-pergunta-box');
+      const p   = PERGUNTAS[quizEstado.atual];
+      const num = quizEstado.atual + 1;
+      const total = PERGUNTAS.length;
+
+      // Atualiza barra de progresso
+      const pct = ((num - 1) / total) * 100;
+      document.getElementById('quiz-barra').style.width = pct + '%';
+      document.getElementById('quiz-progresso-texto').textContent = `Pergunta ${num} de ${total}`;
+
+      // Monta HTML da pergunta
+      const opcoesHTML = p.opcoes.map((op, i) => `
+        <li>
+          <button
+            class="quiz-opcao"
+            data-index="${i}"
+            aria-label="Opção ${String.fromCharCode(65+i)}: ${op}"
+          >
+            <span class="opcao-letra" aria-hidden="true">${String.fromCharCode(65+i)}</span>
+            <span class="opcao-texto">${op}</span>
+          </button>
+        </li>
+      `).join('');
+
+      box.innerHTML = `
+        <div class="quiz-numero" aria-hidden="true">${num}/${total}</div>
+        <p class="quiz-texto" id="quiz-p-${num}" role="heading" aria-level="3">${p.texto}</p>
+        <ul class="quiz-opcoes" role="list" aria-label="Opções de resposta">
+          ${opcoesHTML}
+        </ul>
+        <div id="quiz-feedback" class="quiz-feedback" aria-live="assertive" hidden></div>
+        <button id="btn-proxima" class="btn btn-proxima" hidden aria-label="${num < total ? 'Próxima pergunta' : 'Ver resultado final'}">
+          ${num < total ? 'Próxima Pergunta →' : 'Ver Resultado 🏆'}
+        </button>
+      `;
+
+      // Bind nos botões de opção
+      box.querySelectorAll('.quiz-opcao').forEach(btn => {
+        btn.addEventListener('click', () => responder(parseInt(btn.dataset.index)));
+        // Suporte a teclado: Enter e Space já disparam click em <button>
+      });
+
+      // Bind no botão de próxima
+      document.getElementById('btn-proxima').addEventListener('click', avancar);
+    }
+
+    /* ================================================================
+       4. RESPONDER
+    ================================================================ */
+    function responder(escolhida) {
+      const p        = PERGUNTAS[quizEstado.atual];
+      const correta  = p.correta;
+      const acertou  = (escolhida === correta);
+
+      // Salva resposta
+      quizEstado.respostas.push({ correta: acertou, escolhida });
+      if (acertou) quizEstado.acertos++;
+
+      // Desabilita todos os botões
+      document.querySelectorAll('.quiz-opcao').forEach((btn, i) => {
+        btn.disabled = true;
+        if (i === correta)  { btn.classList.add('correta');  btn.setAttribute('aria-pressed', 'true'); }
+        if (i === escolhida && !acertou) { btn.classList.add('errada'); }
+      });
+
+      // Feedback com explicação
+      const feedback = document.getElementById('quiz-feedback');
+      feedback.hidden = false;
+      feedback.className = 'quiz-feedback ' + (acertou ? 'feedback-ok' : 'feedback-erro');
+      feedback.innerHTML = `
+        <strong>${acertou ? '✅ Correto!' : '❌ Incorreto!'}</strong>
+        <p>${p.explicacao}</p>
+      `;
+
+      // Mostra botão de avançar
+      const btnProx = document.getElementById('btn-proxima');
+      btnProx.hidden = false;
+      btnProx.focus();
+
+      anunciar(acertou ? 'Resposta correta! ' + p.explicacao : 'Resposta incorreta. ' + p.explicacao);
+    }
+
+    /* ================================================================
+       5. AVANÇAR
+    ================================================================ */
+    function avancar() {
+      quizEstado.atual++;
+      if (quizEstado.atual < PERGUNTAS.length) {
+        renderizarPergunta();
+        // Foca o box da pergunta para leitores de tela
+        document.getElementById('quiz-pergunta-box').setAttribute('tabindex', '-1');
+        document.getElementById('quiz-pergunta-box').focus({ preventScroll: false });
+      } else {
+        mostrarResultado();
+      }
+    }
+
+    /* ================================================================
+       6. RESULTADO FINAL
+    ================================================================ */
+    function mostrarResultado() {
+      const total   = PERGUNTAS.length;
+      const acertos = quizEstado.acertos;
+      const pct     = Math.round((acertos / total) * 100);
+
+      // Esconde área de perguntas, mostra resultado
+      document.getElementById('quiz-area').hidden = true;
+      document.querySelector('.quiz-progresso').hidden = true;
+
+      const resultadoEl = document.getElementById('quiz-resultado');
+      resultadoEl.hidden = false;
+
+      // Mensagem conforme desempenho
+      let icone, titulo, msg;
+      if (pct === 100) {
+        icone = '🏆'; titulo = 'Perfeito! Expert em Agro Sustentável!';
+        msg = 'Parabéns! Você domina todos os conceitos de agricultura sustentável. Continue divulgando essas ideias!';
+      } else if (pct >= 75) {
+        icone = '🌿'; titulo = 'Muito Bom! Você Conhece o Agro Verde!';
+        msg = 'Ótimo resultado! Você tem um sólido conhecimento sobre sustentabilidade agrícola. Revise as respostas erradas para ir além.';
+      } else if (pct >= 50) {
+        icone = '🌱'; titulo = 'Bom Começo! Continue Aprendendo!';
+        msg = 'Você está no caminho certo. Releia as seções do site para reforçar os conceitos e tente novamente!';
+      } else {
+        icone = '📚'; titulo = 'Continue Estudando!';
+        msg = 'Que tal revisar o conteúdo do site antes de tentar novamente? Cada seção traz informações importantes sobre o agro sustentável.';
+      }
+
+      document.getElementById('quiz-resultado-icone').textContent = icone;
+      document.getElementById('quiz-resultado-titulo').textContent = titulo;
+      document.getElementById('quiz-resultado-msg').textContent   = msg;
+      document.getElementById('quiz-acertos').textContent = `${acertos}/${total} (${pct}%)`;
+
+      // Barra de progresso = 100%
+      document.getElementById('quiz-barra').style.width = '100%';
+
+      // Detalhes de cada pergunta
+      const detEl = document.getElementById('quiz-detalhes');
+      detEl.innerHTML = '<h4>Resumo das respostas:</h4>' + PERGUNTAS.map((p, i) => {
+        const r = quizEstado.respostas[i];
+        return `
+          <div class="detalhe-item ${r.correta ? 'detalhe-ok' : 'detalhe-erro'}">
+            <span class="detalhe-icone" aria-hidden="true">${r.correta ? '✅' : '❌'}</span>
+            <div>
+              <p class="detalhe-pergunta">${p.texto}</p>
+              ${!r.correta ? `<p class="detalhe-correta">Resposta correta: <strong>${p.opcoes[p.correta]}</strong></p>` : ''}
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('btn-reiniciar').focus();
+      anunciar(`Quiz finalizado! Você acertou ${acertos} de ${total} perguntas, ${pct} por cento.`);
+    }
+
+    /* ================================================================
+       7. REINICIAR
+    ================================================================ */
+    function reiniciarQuiz() {
+      quizEstado = { atual: 0, acertos: 0, respostas: [], finalizado: false };
+
+      document.getElementById('quiz-resultado').hidden = true;
+      document.getElementById('quiz-area').hidden = false;
+      document.querySelector('.quiz-progresso').hidden = false;
+
+      renderizarPergunta();
+      anunciar('Quiz reiniciado. Boa sorte!');
+    }
+
+    document.getElementById('btn-reiniciar').addEventListener('click', reiniciarQuiz);
+
+    // Inicializa o quiz ao carregar
+    renderizarPergunta();
+
+    /* ================================================================
+       8. ACESSIBILIDADE — FONTE
+    ================================================================ */
+    const FONTE_MIN = 12, FONTE_MAX = 22, FONTE_STEP = 2, FONTE_PAD = 16;
+    let fonteAtual = parseInt(localStorage.getItem('av-fonte') || FONTE_PAD);
+    aplicarFonte(fonteAtual);
+
+    function aplicarFonte(px) {
+      document.documentElement.style.setProperty('--font-size-base', px + 'px');
+      localStorage.setItem('av-fonte', px);
+      anunciar('Tamanho da fonte: ' + px + 'px');
+    }
+
+    document.getElementById('btn-fonte-maior').addEventListener('click', () => {
+      if (fonteAtual < FONTE_MAX) { fonteAtual += FONTE_STEP; aplicarFonte(fonteAtual); }
+    });
+    document.getElementById('btn-fonte-menor').addEventListener('click', () => {
+      if (fonteAtual > FONTE_MIN) { fonteAtual -= FONTE_STEP; aplicarFonte(fonteAtual); }
+    });
+    document.getElementById('btn-fonte-reset').addEventListener('click', () => {
+      fonteAtual = FONTE_PAD; aplicarFonte(fonteAtual);
+    });
+
+    /* ================================================================
+       9. ACESSIBILIDADE — ALTO CONTRASTE
+    ================================================================ */
+    const btnContraste = document.getElementById('btn-contraste');
+    let altoContraste  = localStorage.getItem('av-contraste') === 'true';
+    aplicarContraste(altoContraste);
+
+    function aplicarContraste(ativo) {
+      document.body.classList.toggle('alto-contraste', ativo);
+      btnContraste.setAttribute('aria-pressed', String(ativo));
+      btnContraste.textContent = ativo ? '◑ Contraste Normal' : '◑ Alto Contraste';
+      localStorage.setItem('av-contraste', ativo);
+      anunciar(ativo ? 'Alto contraste ativado.' : 'Alto contraste desativado.');
+    }
+
+    btnContraste.addEventListener('click', () => {
+      altoContraste = !altoContraste;
+      aplicarContraste(altoContraste);
+    });
+
+    /* ================================================================
+       10. PAINEL DE ACESSIBILIDADE
+    ================================================================ */
+    const btnAcess   = document.getElementById('btn-acess');
+    const painel     = document.getElementById('painel-acessibilidade');
+    const overlay    = document.getElementById('overlay-painel');
+    const btnFechar  = document.getElementById('btn-fechar-painel');
+    let painelAberto = false;
+
+    function abrirPainel() {
+      painelAberto = true;
+      painel.classList.add('aberto');
+      overlay.classList.add('visivel');
+      painel.setAttribute('aria-hidden', 'false');
+      overlay.setAttribute('aria-hidden', 'false');
+      btnAcess.setAttribute('aria-expanded', 'true');
+      btnFechar.focus();
+    }
+    function fecharPainel() {
+      painelAberto = false;
+      painel.classList.remove('aberto');
+      overlay.classList.remove('visivel');
+      painel.setAttribute('aria-hidden', 'true');
+      overlay.setAttribute('aria-hidden', 'true');
+      btnAcess.setAttribute('aria-expanded', 'false');
+      btnAcess.focus();
+    }
+
+    btnAcess.addEventListener('click', () => painelAberto ? fecharPainel() : abrirPainel());
+    btnFechar.addEventListener('click', fecharPainel);
+    overlay.addEventListener('click', fecharPainel);
+
+    /* ================================================================
+       11. MENU MOBILE
+    ================================================================ */
+    const hamburger  = document.getElementById('hamburger');
+    const menuMobile = document.getElementById('menu-mobile');
+    let menuAberto   = false;
+
+    function abrirMenu() {
+      menuAberto = true;
+      menuMobile.classList.add('aberto');
+      menuMobile.setAttribute('aria-hidden', 'false');
+      hamburger.setAttribute('aria-expanded', 'true');
+      hamburger.setAttribute('aria-label', 'Fechar menu de navegação');
+      menuMobile.querySelector('a').focus();
+    }
+    function fecharMenu() {
+      menuAberto = false;
+      menuMobile.classList.remove('aberto');
+      menuMobile.setAttribute('aria-hidden', 'true');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.setAttribute('aria-label', 'Abrir menu de navegação');
+    }
+
+    hamburger.addEventListener('click', () => menuAberto ? fecharMenu() : abrirMenu());
+    menuMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', fecharMenu));
+
+    /* ================================================================
+       12. ESC FECHA TUDO
+    ================================================================ */
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        if (painelAberto) fecharPainel();
+        if (menuAberto)   fecharMenu();
+      }
+    });
+
+    /* ================================================================
+       13. NAVBAR SCROLL + SMOOTH SCROLL
+    ================================================================ */
     window.addEventListener('scroll', () => {
-      document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
-    });
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
 
-    // Form feedback
-    document.getElementById('form').addEventListener('submit', e => {
-      e.preventDefault();
-      const btn = e.target.querySelector('button');
-      btn.textContent = '✅ Enviado com sucesso!';
-      btn.disabled = true;
-      setTimeout(() => { btn.textContent = 'Enviar Mensagem 🌱'; btn.disabled = false; e.target.reset(); }, 3000);
-    });
-
-    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
+        const alvo = document.querySelector(a.getAttribute('href'));
+        if (!alvo) return;
         e.preventDefault();
-        const el = document.querySelector(a.getAttribute('href'));
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        alvo.scrollIntoView({ behavior: 'smooth' });
+        alvo.setAttribute('tabindex', '-1');
+        alvo.focus({ preventScroll: true });
       });
     });
+
+    /* ================================================================
+       14. ARIA-LIVE
+    ================================================================ */
+    function anunciar(msg) {
+      const el = document.getElementById('anuncio');
+      el.textContent = '';
+      setTimeout(() => { el.textContent = msg; }, 100);
+    }
+
   </script>
 
 </body>
 </html>
+
